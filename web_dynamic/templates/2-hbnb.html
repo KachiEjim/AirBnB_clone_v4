@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="static/scripts/1-hbnb.js?{{ cache_id }}"></script>
+    <script src="../static/scripts/2-hbnb.js?{{ cache_id }}"></script>
     <link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
@@ -14,6 +14,7 @@
   </head>
   <body>
     <header>
+    <div id="api_status" class="available"></div>
       <div class="logo"></div>
     </header>
     <div class="container">
@@ -43,7 +44,7 @@
 	    <ul>
             {% for amenity in amenities %}
             <li style="position: relative;">
-                <input type="checkbox" id="{{ amenity.id }}" name="{{ amenity.name }}" style="position: absolute; left: -10px;">
+                <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}" style="position: absolute; left: -10px;">
                 <label for="{{ amenity.id }}" style="margin-left: 20px;">{{ amenity.name }}</label>
             </li>
         {% endfor %}
